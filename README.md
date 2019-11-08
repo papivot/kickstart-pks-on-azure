@@ -92,10 +92,11 @@ dns_subdomain         = "subdomain"
 -   location:  **(required)**  Azure location to stand up environment in
 -   ops_manager_image_uri:  **(optional)**  URL for an OpsMan image hosted on Azure (if not provided you get no Ops Manager)
 -   dns_suffix:  **(required)**  Domain to add environment subdomain to
--  dns_subdomain: **(required)**  Subdomain to add environment subdomain to
+-  dns_subdomain: **(required)**  Subdomain to the environment
 
 #### NOTE
 For the demo/POC purpose, we will not be deploying/using custom certificates. We will be leveraging self signed certificates. As a result, the following tweaks need to be made to the a file in the git repo downloaded above. 
+
 * Create a new file called `pks-config-new.yml` in the correct directory. 
 * Copy and paste the contents from the file in the current Github repo [\[here\]](https://github.com/papivot/kickstart-pks-on-aws/blob/master/pks-config-new.yml)
 * Save the file content.
@@ -318,5 +319,5 @@ terraform destroy
 ```
 This will destroy all the plumbing and OpsMan VM, that were created in **Stage 2**.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDQ5NjQ0NTRdfQ==
+eyJoaXN0b3J5IjpbLTU0NjY3OTUxN119
 -->
