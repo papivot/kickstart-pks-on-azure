@@ -1,9 +1,9 @@
-# Installing PKS on AWS
-This document leverages a Ubuntu jump box/bastion host to deploy `PKS on AWS`. This is for demo/education purpose only and not intended for production use. Please use Concourse and Platform Automation for deploying in a more formal environment. 
+# Installing PKS on Azure
+This document leverages a Ubuntu jump box/bastion host to deploy `PKS on Azure`. This is for demo/education purpose only and not intended for production use. Please use Concourse and Platform Automation for deploying in a more formal environment. 
 
 Prerequisites for the installation
 
-* Access to the AWS account. 
+* Access to the Azure account. 
 *  The following packages installed on the bastion host
 	* jq, wget, ruby-full, go-devel
 	```console
@@ -14,9 +14,9 @@ Prerequisites for the installation
 ## Stage 1
 ### Preparing the jump box/bastion
  The following packages need to be installed on the bastion host - 
- * AWS CLI (optional)
+ * Azure CLI (optional)
 	```console
-	sudo apt install awscli
+	sudo apt install azcli
 	```
 * Terraform 
 	* Download the **latest** version of Terraform (v0.12.13 in this example) and move to /usr/local/bin
@@ -64,7 +64,7 @@ Prerequisites for the installation
 Download the `paving-pks` git repo. Contact the author if you do not have access to the repo. 
 ```console
 git clone https://github.com/pivotal/paving-pks.git
-cd aws/examples/open-network
+cd azure/examples/open-network
 ```
 **IMPORTANT** Going forward, all jump box activity will be done within this directory. 
 
@@ -315,3 +315,6 @@ Make sure that all EC2 instances created by the PKS environment, **excluding the
 terraform destroy
 ```
 This will destroy all the plumbing and OpsMan VM, that were created in **Stage 2**.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbODU4NjYwODU2XX0=
+-->
