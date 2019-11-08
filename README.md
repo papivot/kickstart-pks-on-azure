@@ -312,12 +312,13 @@ small  [PLAN ID]                             Example: This plan will configure a
 
 ## Destroy
 
-Make sure that all EC2 instances created by the PKS environment, **excluding the OpsMan VM**, has been destroyed.
+Make sure that all A instances created by the PKS environment, **excluding the OpsMan VM**, has been destroyed.
 
 ```console
 terraform destroy
 ```
 This will destroy all the plumbing and OpsMan VM, that were created in **Stage 2**.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3NzIyMTc2MiwtMTk1NTc5NTI4MF19
+eyJoaXN0b3J5IjpbNTQxNTkxNzMzLDIwNzcyMjE3NjIsLTE5NT
+U3OTUyODBdfQ==
 -->
