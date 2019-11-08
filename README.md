@@ -76,22 +76,23 @@ tenant_id             = "TENANT_ID"
 client_id             = "CLIENT_ID"
 client_secret         = "CLINET_SECRET"
 
-env_name              = "azcloud"
+env_name              = "env"
 location              = "East US"
 ops_manager_image_uri = "https://opsmanagereastus.blob.core.windows.net/images/ops-manager-2.7.1-build.189.vhd"
-dns_suffix            = "navneetv.com"
-dns_subdomain         = "azcloud"
+dns_suffix            = "domain.com"
+dns_subdomain         = "subdomain"
 ```
 #### Variables
 
+-   subscription_id:  **(required)**  Azure account subscription id
+-   tenant_id:  **(required)**  Azure account tenant id
+-   client_id:  **(required)**  Azure automation account client id
+-   client_secret:  **(required)**  Azure automation account client secret
 -   env_name:  **(required)**  An arbitrary unique name for namespacing resources
--   region:  **(required)**  Region you want to deploy your resources to
--   availability_zones:  **(required)**  List of AZs you want to deploy to
+-   location:  **(required)**  Azure location to stand up environment in
+-   ops_manager_image_uri:  **(optional)**  URL for an OpsMan image hosted on Azure (if not provided you get no Ops Manager)
 -   dns_suffix:  **(required)**  Domain to add environment subdomain to
--   vpc_cidr:  **(default: 10.0.0.0/16)**  Internal CIDR block for the AWS VPC.
--   rds_instance_count: **(default:0)**
--   ops_manager_ami: **(optional)** Ops Manager AMI, get the right AMI according to your region from the AWS guide downloaded from [Pivotal Network](https://network.pivotal.io/products/ops-manager) (if set to `""` no Ops Manager VM will be created)
--  rds_instance_count: **(default: 0)** Whether or not you would like an RDS for your deployment
+-  dns_subdomain: **(required)**  Subdomain to add environment subdomain to
 
 #### NOTE
 For the demo/POC purpose, we will not be deploying/using custom certificates. We will be leveraging self signed certificates. As a result, the following tweaks need to be made to the a file in the git repo downloaded above. 
@@ -317,5 +318,5 @@ terraform destroy
 ```
 This will destroy all the plumbing and OpsMan VM, that were created in **Stage 2**.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTAyMTE2MjFdfQ==
+eyJoaXN0b3J5IjpbLTE3NDQ5NjQ0NTRdfQ==
 -->
