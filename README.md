@@ -102,8 +102,8 @@ For the demo/POC purpose, we will not be deploying/using custom certificates. We
 * Save the file content.
 * Update the original `pks-config.yml` file with the new one.
 ```console
-cp -pav ../../../ci/assets/azure/pks-config.yml ../../../ci/assets/az/pks-config-orig.yml
-cp pks-config-new.yml ../../../ci/assets/aws/pks-config.yml
+cp -pav ../../../ci/assets/azure/pks-config.yml ../../../ci/assets/azure/pks-config-orig.yml
+cp pks-config-new.yml ../../../ci/assets/azure/pks-config.yml
 ``` 
 ---
 
@@ -216,7 +216,7 @@ applying errand configuration for the following errands:
 could not execute "configure-product": configuration not complete.
 The properties you provided have been set,
 but some required properties or configuration details are still missing.
-Visit the Ops Manager for details: pcf.azcloud.navneetv.com
+Visit the Ops Manager for details: 
 ```
 This is expected, as we did not provide the api end point certificates (optional) during Stage 1. This can be manually fixed by performing the following steps - 
 
@@ -319,5 +319,5 @@ terraform destroy
 ```
 This will destroy all the plumbing and OpsMan VM, that were created in **Stage 2**.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDI0OTc1NzU1XX0=
+eyJoaXN0b3J5IjpbMjA3OTkzNDk4XX0=
 -->
