@@ -98,7 +98,7 @@ dns_subdomain         = "subdomain"
 For the demo/POC purpose, we will not be deploying/using custom certificates. We will be leveraging self signed certificates. As a result, the following tweaks need to be made to the a file in the git repo downloaded above. 
 
 * Create a new file called `pks-config-new.yml` in the correct directory. 
-* Copy and paste the contents from the file in the current Github repo [\[here\]](https://github.com/papivot/kickstart-pks-on-aws/blob/master/pks-config-new.yml)
+* Copy and paste the contents from the file in the current Github repo [\[here\]](https://github.com/papivot/kickstart-pks-on-azure/blob/master/pks-config-new.yml)
 * Save the file content.
 * Update the original `pks-config.yml` file with the new one.
 ```console
@@ -319,5 +319,5 @@ terraform destroy
 ```
 This will destroy all the plumbing and OpsMan VM, that were created in **Stage 2**.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTU3OTUyODBdfQ==
+eyJoaXN0b3J5IjpbMjA3NzIyMTc2MiwtMTk1NTc5NTI4MF19
 -->
