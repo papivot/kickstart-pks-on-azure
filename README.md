@@ -102,7 +102,7 @@ For the demo/POC purpose, we will not be deploying/using custom certificates. We
 * Save the file content.
 * Update the original `pks-config.yml` file with the new one.
 ```console
-cp -pav ../../../ci/assets/aws/pks-config.yml ../../../ci/assets/aws/pks-config-orig.yml
+cp -pav ../../../ci/assets/azure/pks-config.yml ../../../ci/assets/az/pks-config-orig.yml
 cp pks-config-new.yml ../../../ci/assets/aws/pks-config.yml
 ``` 
 ---
@@ -115,7 +115,7 @@ terraform plan -out=plan
 terraform apply plan
 ```
 
-This should deploy the OpsMan VM and all the required AWS artifacts(networking/security groups, DNS etc) necessary to PKS environment. 
+This should deploy the OpsMan VM and all the required Azure artifacts(networking/security groups, DNS etc) necessary to PKS environment. 
 
 The `terraform.tfstate` and `output.tf` file contains the required outputs from the terraform run.
 
@@ -135,7 +135,7 @@ Leveraging the `terraform.tfstate` file, the BOSH director is configured. While 
 
 ```console
 jq -e -r '.outputs|map_values(.value)' terraform.tfstate > tf.output
-texplate execute ../../../ci/assets/aws/director-config.yml -f tf.output -o yaml > director-config.yml
+texplate execute ../../../ci/assets/azure/director-config.yml -f tf.output -o yaml > director-config.yml
 om -t [fqdn_opsmanager] -u [opsmansger_admin_user] -p [opsmansger_admin_password] -k configure-director --config director-config.yml
 ```
 
@@ -201,7 +201,7 @@ om -t [fqdn_opsmanager] -u [opsmansger_admin_user] -p [opsmansger_admin_password
 Similar to the BOSH Director, the PKS tile needs to be configured. The can be done similar to the BOSH Director by running the following commands - 
 
 ```console
-texplate execute ../../../ci/assets/aws/pks-config.yml -f tf.output > pks-config.yml
+texplate execute ../../../ci/assets/azure/pks-config.yml -f tf.output > pks-config.yml
 om -t [fqdn_opsmanager] -u [opsmansger_admin_user] -p [opsmansger_admin_password] -k configure-product --config pks-config.yml
 ```
 
@@ -216,7 +216,7 @@ applying errand configuration for the following errands:
 could not execute "configure-product": configuration not complete.
 The properties you provided have been set,
 but some required properties or configuration details are still missing.
-Visit the Ops Manager for details: pcf.awscloud.navneetv.com
+Visit the Ops Manager for details: pcf.azcloud.navneetv.com
 ```
 This is expected, as we did not provide the api end point certificates (optional) during Stage 1. This can be manually fixed by performing the following steps - 
 
@@ -319,5 +319,5 @@ terraform destroy
 ```
 This will destroy all the plumbing and OpsMan VM, that were created in **Stage 2**.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0NjY3OTUxN119
+eyJoaXN0b3J5IjpbNDI0OTc1NzU1XX0=
 -->
