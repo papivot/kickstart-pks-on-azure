@@ -258,7 +258,8 @@ Once the PKS API VM has been installed and configured, we need to create a user(
 om -t [fqdn_opsmanager] -u [opsmansger_admin_user] -p [opsmansger_admin_password] -k credentials -p pivotal-container-service -c .properties.pks_uaa_management_admin_client -t json	
 # Copy the value of the secret.
 ```
-* Adjust the VM security group. Make sure that the security group `[pks_api_lb_security_group]` is added to the `pivotal-container-service` EC2 instance in the AWS console. 
+* Adjust the network security group for the PKS API VM. Make sure that the security group `[azcloud-pks-api-sg]` is added to the `pivotal-container-service` VM in the Azure console.
+ 
 * Connect to the PKS UAA
 ```console
 uaac target https://[pks_api_endpoint]:8443 --skip-ssl-validation
@@ -319,6 +320,6 @@ terraform destroy
 ```
 This will destroy all the plumbing and OpsMan VM, that were created in **Stage 2**.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjYxODkxNDAsMjA3NzIyMTc2MiwtMT
-k1NTc5NTI4MF19
+eyJoaXN0b3J5IjpbLTE2MDY5Mzg5NzQsLTEwNjYxODkxNDAsMj
+A3NzIyMTc2MiwtMTk1NTc5NTI4MF19
 -->
