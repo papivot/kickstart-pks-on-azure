@@ -71,15 +71,16 @@ cd azure/examples/open-network
 Within the directory, create a variables file called `terraform.tfvars` with values specific to your environment - 
 
 ```
-env_name           = "subdomain"
-access_key         = "AAAAAAAAAAAAAAAA"
-secret_key         = "sadkjlkasdkasdjkjflkajhfklafHJHJKDHJH"
-region             = "us-east-2"
-availability_zones = ["us-east-2a", "us-east-2b", "us-east-2c"]
-ops_manager_ami    = "ami-06e8270280347fbbe"
-rds_instance_count = 0
-dns_suffix         = "domainname.com"
-vpc_cidr           = "10.0.0.0/16"
+subscription_id       = "SUBSCRIPTION_ID"
+tenant_id             = "TENANT_ID"
+client_id             = "CLIENT_ID"
+client_secret         = "CLINET_SECRET"
+
+env_name              = "azcloud"
+location              = "East US"
+ops_manager_image_uri = "https://opsmanagereastus.blob.core.windows.net/images/ops-manager-2.7.1-build.189.vhd"
+dns_suffix            = "navneetv.com"
+dns_subdomain         = "azcloud"
 ```
 #### Variables
 
@@ -316,5 +317,5 @@ terraform destroy
 ```
 This will destroy all the plumbing and OpsMan VM, that were created in **Stage 2**.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODU4NjYwODU2XX0=
+eyJoaXN0b3J5IjpbLTE0NTAyMTE2MjFdfQ==
 -->
