@@ -186,7 +186,7 @@ Find the link to the relevant stemcell in the Product Description tab and downlo
 ```console
 pivnet download-product-files --product-slug='stemcells-ubuntu-xenial' --release-version='315.81' --product-file-id=460228
 ```
-The stemcell file would be named similar to `light-bosh-stemcell-[version_#]-aws-xen-hvm-ubuntu-xenial-go_agent.tgz`
+The stemcell file would be named similar to `bosh-stemcell-315.81-azure-hyperv-ubuntu-xenial-go_agent.tgz`
 
 Once these 4 files have been downloaded, the PKS Product file and the stemcell needs to be uploaded to the OpsManager,
 
@@ -319,5 +319,5 @@ terraform destroy
 ```
 This will destroy all the plumbing and OpsMan VM, that were created in **Stage 2**.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3OTkzNDk4XX0=
+eyJoaXN0b3J5IjpbLTE5NTU3OTUyODBdfQ==
 -->
